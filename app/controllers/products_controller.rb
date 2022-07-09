@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
+    session[:cart] ||= []
     @products = Product.all
   end
 
