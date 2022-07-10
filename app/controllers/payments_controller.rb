@@ -27,7 +27,7 @@ class PaymentsController < ApplicationController
         excluded_payment_methods: [
           { id: 'visa' }
         ] 
-      }
+      },
       items:,
       back_urls: {
         success: payments_success_url,
@@ -59,5 +59,6 @@ class PaymentsController < ApplicationController
 
   def get_sdk
     @sdk = Mercadopago::SDK.new(ENV['MP_ACCESS_TOKEN'])
+    @sdk.request_options.integrator_id = 'dev_24c65fb163bf11ea96500242ac130004'
   end
 end

@@ -1,4 +1,10 @@
-<div>
-  <h1 class="font-bold text-4xl">Payments#success</h1>
-  <p>Find me in app/views/payments/success.html.erb</p>
+<%= render 'cart/header' %>
+<div class="w-full">
+  <p class="text-center bg-green-100 text-green-800 font-medium rounded">Payment success</p>
+  <div class="p-6 font-medium font-mono">
+    <p>payment_id: <%= params[:collection_id] %></p>
+    <p>preference_id: <%= params[:preference_id] %></p>
+    <p>payment_type: <%= params[:preference_id] %></p>
+    <p>external_reference: <%= params[:external_reference] %></p>
+  </div>
 </div>
