@@ -19,7 +19,7 @@ class PaymentsController < ApplicationController
         address: {
           zip_code: '5549',
           street_name: 'Falsa',
-          number: 123
+          street_number: 123
         }
       },
       payment_methods: {
