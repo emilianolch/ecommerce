@@ -24,6 +24,7 @@
 
 # Ignore uploaded files in development.
 /storage/*
+!/storage/seeds/
 !/storage/.keep
 /tmp/storage/*
 !/tmp/storage/
