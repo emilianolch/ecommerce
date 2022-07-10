@@ -77,3 +77,5 @@ end
 gem "dotenv-rails", "~> 2.7"
 
 gem "mercadopago-sdk", "~> 2.1"
+
+gem "pg", "~> 1.4", :group => :production
