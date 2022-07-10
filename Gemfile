@@ -73,3 +73,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "dotenv-rails", "~> 2.7"
+
+gem "mercadopago-sdk", "~> 2.1"

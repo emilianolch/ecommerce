@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'payments/create'
+  post 'payments/create'
   get 'payments/success'
   get 'payments/pending'
   get 'payments/failure'
+  post 'payments/notification'
   get 'cart/index'
   post 'cart/add'
   post 'cart/remove'
