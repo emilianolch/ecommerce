@@ -5,7 +5,7 @@ class PaymentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :notification
 
   def create
-    items = session[:cart].map { |id| Product.find(id) }.map &:to_preference_item
+    items = session[:cart].map { |id| Product.find(id) }.map(&:to_preference_item)
 
     preference_data = {
       payer: {
@@ -26,7 +26,7 @@ class PaymentsController < ApplicationController
         installments: 6,
         excluded_payment_methods: [
           { id: 'visa' }
-        ] 
+        ]
       },
       items:,
       back_urls: {
@@ -40,12 +40,16 @@ class PaymentsController < ApplicationController
     }
 
     preference = @sdk.preference.create(preference_data)[:response]
-    redirect_to preference['init_point']
+    redirect_to preference['init_point'], allow_other_host: true
   end
 
-  def success; end
+  def success
+    session[:cart] = []
+  end
 
-  def pending; end
+  def pending
+    session[:cart] = []
+  end
 
   def failure; end
 
