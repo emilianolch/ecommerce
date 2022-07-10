@@ -73,6 +73,6 @@ Rails.application.configure do
 end
 
 # NGROK url
-Rails.application.routes.default_url_options = { protocol: 'https', host: ENV['NGROK'] }
+Rails.application.routes.default_url_options = { protocol: 'https', host: ENV['HOST'] }
 
 
