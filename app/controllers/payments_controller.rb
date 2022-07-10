@@ -40,7 +40,7 @@ class PaymentsController < ApplicationController
     }
 
     preference = @sdk.preference.create(preference_data)[:response]
-    logger.debug preference.inspect
+    redirect_to preference['init_point']
   end
 
   def success; end
